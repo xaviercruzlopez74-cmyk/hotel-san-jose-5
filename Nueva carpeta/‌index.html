@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hotel San José</title>
+<style>
+body { margin: 0; font-family: Arial, sans-serif; background: #f4f4f4; color: #222; transition:0.3s;}
+.dark{background:#121212;color:#e0e0e0;}
+header{position:relative;background:url('images/foto_entrada_hotel.jpg') center/cover no-repeat;color:white;text-align:center;padding:120px 20px;}
+header::after{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.4);z-index:0;}
+header h1, header p{position:relative; z-index:1; text-shadow:2px 2px 6px rgba(0,0,0,0.6);}
+nav{background:#111;text-align:center;padding:12px 0;}
+nav a{color:#eee;margin:10px;text-decoration:none;font-weight:bold;}
+nav a:hover{color:#27ae60;}
+.toggle{position:fixed;top:10px;right:10px;background:#111;color:#fff;padding:10px;border-radius:5px;cursor:pointer;z-index:100;}
+.container{max-width:1100px;margin:auto;padding:20px;}
+.card{background:white;padding:20px;margin:20px 0;border-radius:10px;}
+.dark .card{background:#1e1e1e;color:#eee;}
+.carousel img{width:100%;border-radius:10px;transition:opacity 0.5s;}
+input, select{width:100%;padding:10px;margin:10px 0;box-sizing:border-box;border:1px solid #ddd;border-radius:5px;}
+.btn{background:#27ae60;color:white;padding:12px;border:none;width:100%;cursor:pointer;border-radius:5px;font-size:16px;}
+.btn:hover{background:#219653;}
+.wpp{position:fixed;bottom:20px;right:20px;background:#25D366;color:white;padding:15px;border-radius:50%;text-decoration:none;font-size:24px;z-index:100;}
+.wpp:hover{background:#128C7E;}
+iframe{width:100%;height:300px;border-radius:10px;border:none;}
+footer{background:#2c3e50;color:white;text-align:center;padding:10px;margin-top:20px;}
+/* Responsive */
+@media(max-width:600px){header{padding:80px 10px;}}
+</style>
+</head>
+<body>
+
+<div class="toggle" onclick="modo()" aria-label="Cambiar modo claro/oscuro">🌙</div>
+
+<header>
+<h1>Hotel San José</h1>
+<p>Lampazos de Naranjo, Nuevo León</p>
+</header>
+
+<nav>
+<a href="#inicio">Inicio</a>
+<a href="#galeria">Galería</a>
+<a href="#reserva">Reservación</a>
+<a href="#habitacion">Habitación</a>
+<a href="#opiniones">Opiniones</a>
+<a href="#ubicacion">Ubicación</a>
+</nav>
+
+<div class="container">
+
+<section id="inicio">
+<div class="card">
+<h2>Bienvenido a Hotel San José</h2>
+<p>Disfruta de tu estancia en Lampazos de Naranjo con comodidad, atención personalizada y servicios premium.</p>
+</div>
+</section>
+
+<section id="galeria">
+<div class="card">
+<h2>Galería</h2>
+<div class="carousel">
+<img id="slider" src="images/foto_entrada_hotel.jpg" alt="Entrada cubierta del Hotel San José con paredes blancas y detalles en naranja, estacionamiento disponible">
+</div>
+</div>
+</section>
+
+<section id="reserva">
+<div class="card">
+<h2>Reservación de habitación</h2>
+<input type="text" id="nombre" placeholder="Tu nombre completo">
+<input type="date" id="entrada">
+<input type="date" id="salida">
+<select id="habitacion">
+<option>Habitación doble</option>
+</select>
+<p>Duración: 12 horas | Precio: $700</p>
+<button class="btn" onclick="enviar()">Reservar por WhatsApp</button>
+</div>
+</section>
+
+<section id="habitacion">
+<div class="card">
+<h2>Información de la habitación</h2>
+<ul>
+<li>Agua caliente</li>
+<li>Internet Wi-Fi gratis</li>
+<li>Televisión</li>
+<li>Aire acondicionado</li>
+<li>Duración: 12 horas</li>
+<li>Precio: $700</li>
+</ul>
+<h3>Escanea para conocer Lampazos de Naranjo</h3>
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://es.wikipedia.org/wiki/Lampazos_de_Naranjo" alt="QR Lampazos de Naranjo">
+</div>
+</section>
+
+<section id="opiniones">
+<div class="card">
+<h2>Opiniones de nuestros huéspedes</h2>
+<p>⭐⭐⭐⭐⭐ "Muy limpio y cómodo, el personal es muy amable."</p>
+<p>⭐⭐⭐⭐⭐ "Excelente atención, la habitación está muy bien cuidada."</p>
+<p>⭐⭐⭐⭐ "Buen precio y ubicación central, ideal para mi viaje."</p>
+</div>
+</section>
+
+<section id="ubicacion">
+<div class="card">
+<h2>Ubicación</h2>
+<p>Centro de Lampazos de Naranjo, Nuevo León — cerca de servicios y puntos de interés locales.</p>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3593.581289210231!2d-100.5423839247133!3d25.50577717741336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x866295714c989107%3A0x354114e2a3829c0!2sLampazos%20de%20Naranjo%2C%20N.L.%2C%20M%C3%A9xico!5e0!3m2!1ses-419!2smx!4v1714700000000!5m2!1ses-419!2smx" allowfullscreen="" loading="lazy"></iframe>
+</div>
+</section>
+
+</div>
+
+<footer>
+<p>© 2026 Hotel San José - Todos los derechos reservados</p>
+</footer>
+
+<a href="https://wa.me/528671039731" class="wpp" aria-label="WhatsApp">💬</a>
+
+<script>
+// Modo oscuro
+function modo(){
+    document.body.classList.toggle("dark");
+    const toggle = document.querySelector('.toggle');
+    toggle.innerHTML = document.body.classList.contains('dark') ? "☀️" : "🌙";
+}
+
+// Carrusel de imágenes
+var imagenes = [
+"images/foto_entrada_hotel.jpg",
+"images/foto_habitacion_doble.jpg",
+"images/foto_zona_estar.jpg"
+];
+var alts = [
+"Entrada cubierta del Hotel San José",
+"Habitación doble con dos camas y manta azul",
+"Zona de estar con TV y mini refrigerador"
+];
+var i=0;
+var slider=document.getElementById("slider");
+setInterval(()=>{
+i=(i+1)%imagenes.length;
+slider.style.opacity=0;
+setTimeout(()=>{
+slider.src=imagenes[i];
+slider.alt=alts[i];
+slider.style.opacity=1;
+},300);
+},3000);
+
+// Reservación por WhatsApp
+function enviar(){
+    var n=document.getElementById("nombre").value;
+    var e=document.getElementById("entrada").value;
+    var s=document.getElementById("salida").value;
+    var h=document.getElementById("habitacion").value;
+    if(!n||!e||!s){alert("Por favor completa todos los campos.");return;}
+    if(e>s){alert("La fecha de salida debe ser posterior a la de entrada.");return;}
+    var msg="Reserva Hotel San José:%0ANombre: "+n+"%0AEntrada: "+e+"%0ASalida: "+s+"%0AHabitación: "+h+"%0APrecio: $700";
+    window.open("https://wa.me/528671039731?text="+msg,'_blank');
+}
+</script>
+
+</body>
+</html>
